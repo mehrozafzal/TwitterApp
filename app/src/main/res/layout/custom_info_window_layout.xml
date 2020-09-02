@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/custom_info_window_bg">
+
+    <TextView
+        android:id="@+id/customInfoWindow_handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="MezzyKh"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/customInfoWindow_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="29th august,2020" />
+
+    <Button
+        android:id="@+id/customInfoWindow_detailBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="View detail"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_button_bg"
+        android:textColor="@color/color_white"/>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.project.twitter.ui.map.TwitterMapActivity" />
+
+    <LinearLayout
+        android:id="@+id/activityTwitterMap_radiusContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/activityTwitterMap_enterRadiusEdt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:lines="1"
+            android:inputType="number"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimary"
+            android:hint="@string/activityTwitterMap_enterRadius" />
+
+        <Button
+            android:id="@+id/activityTwitterMap_updateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/custom_button_bg"
+            android:text="Update"
+            android:textColor="@color/color_white"
+            android:onClick="updateRadius"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/activityTwitterMap_radiusContainer"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        map:fabSize="normal"
+        android:src="@drawable/ic_baseline_search_24"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="searchTweets"/>
+</RelativeLayout>

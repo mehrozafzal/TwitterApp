@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/activity_vertical_margin"
+    android:layout_marginEnd="@dimen/activity_vertical_margin"
+    tools:context=".ui.detail.DetailActivity"
+    android:background="@color/color_white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/activityDetail_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activityDetail_handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetail_avatar"
+        tools:text="MezzyKh"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/activityDetail_tweetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetail_handle"
+        tools:text="#Waseem Akhtar will be no more the Mayor in the next 30 seconds. I personally think Karachites will heave a sigh of relief and his tenure has jeopardised the #MQM political future hugely" />
+
+    <TextView
+        android:id="@+id/activityDetail_tweetTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetail_tweetText"
+        tools:text="29 august, 2020" />
+
+    <ImageView
+        android:id="@+id/activityDetail_likeImg"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@null"
+        android:onClick="likeTweet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetail_tweetText"
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+    <Button
+        android:id="@+id/activityDetail_retweetBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/custom_button_bg"
+        android:onClick="retweet"
+        android:text="@string/activityDetail_retweet"
+        android:textAllCaps="false"
+        android:textColor="@color/color_white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetail_tweetText" />
+
+    <include
+        android:id="@+id/activityDetail_progress"
+        layout="@layout/progress_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

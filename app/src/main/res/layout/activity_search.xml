@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".ui.search.SearchActivity">
+
+    <LinearLayout
+        android:id="@+id/activitySearch_searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/activitySearch_searchEdt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:hint="@string/activitySearch_searchBar"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:padding="12dp"/>
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/custom_button_bg"
+            android:contentDescription="@null"
+            android:onClick="searchTweets"
+            android:padding="4dp"
+            android:src="@drawable/ic_baseline_search_24"
+            android:tint="@color/color_white"
+            tools:ignore="UseAppTint" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activitySearch_searchRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activitySearch_searchContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_search_image" />
+
+
+    <TextView
+        android:id="@+id/activitySearch_noTweetTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activitySearch_noTweetsMsg"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/activitySearch_progress"
+        layout="@layout/progress_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
