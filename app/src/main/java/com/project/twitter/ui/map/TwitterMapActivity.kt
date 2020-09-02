@@ -209,8 +209,4 @@ class TwitterMapActivity : BaseActivity(), OnMapReadyCallback {
         timerTask.cancel()
     }
 
-    override fun onDestroy() {
-        mapFragment.onDestroy()
-        super.onDestroy()
-    }
 }
