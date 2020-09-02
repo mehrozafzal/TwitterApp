@@ -39,6 +39,7 @@ class TwitterMapActivity : BaseActivity(), OnMapReadyCallback {
     private lateinit var timerTask: TimerTask
     private var timer = Timer()
     private lateinit var gpsTracker: GPSTracker
+    private lateinit var mapFragment: SupportMapFragment
 
     private val mapViewModel by lazy {
         getViewModel<MapViewModel>()
@@ -47,7 +48,7 @@ class TwitterMapActivity : BaseActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_twitter_map)
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         gpsTracker = GPSTracker(this)
     }
@@ -195,6 +196,7 @@ class TwitterMapActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     override fun onResume() {
+        mapFragment.onResume()
         super.onResume()
         if (mMap != null)
             pollForRecentTweets()
@@ -202,7 +204,13 @@ class TwitterMapActivity : BaseActivity(), OnMapReadyCallback {
 
 
     override fun onPause() {
+        mapFragment.onPause()
         super.onPause()
         timerTask.cancel()
+    }
+
+    override fun onDestroy() {
+        mapFragment.onDestroy()
+        super.onDestroy()
     }
 }
