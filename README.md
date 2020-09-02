@@ -12,6 +12,8 @@ User is also able to search tweets using a keyword or hashtag. A list of tweets 
 - Twitter favorite a tweet
 - Twitter retweet a tweet
 - Google Maps integration
+- Continuous polling of recent tweets after every 20 seconds
+- If the number of tweets becomes equal to 100 or greater, the most old 10 tweets will be removed from the Map. 
 
 **Technologies**</br>
 - Kotlin
